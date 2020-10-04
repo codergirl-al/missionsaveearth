@@ -50,7 +50,10 @@
         </div>
       </div>
     </form>
-
+    
+    <p class="inform" style="margin: 10px 10%; text-align: justify;">
+      We really hope the website visitors use this chat to share ideas, communicate, exchange experiences, meet new friends and help make a change. Our society has to focus more on solving the problems using the tools we have, in this case: the internet. We hope we all come together, one step closer to a better planet to live in.
+    </p>
     <footer class="footer">
       <p>
         &copy; All rights reserved <br />
@@ -124,7 +127,7 @@
         .on("child_added", function(snapshot) {
           var html = "";
           // give each message a unique ID
-          html += "<li className='sent-msg' id='message-" + snapshot.key + "'>";
+          html += "<li className='sentMsg' id='message-" + snapshot.key + "'>";
           // show delete button if message is sent by me
           if (snapshot.val().sender == myName) {
             html +=
@@ -136,7 +139,6 @@
           }
           html += snapshot.val().sender + ": " + snapshot.val().message;
           html += "</li>";
-
           document.getElementById("messages").innerHTML += html;
         });
 

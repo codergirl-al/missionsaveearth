@@ -10,6 +10,8 @@
   margin-right: auto;
   position: relative;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  padding: 10px;
+  margin-bottom: 30px;
 }
 
 ul {
@@ -17,11 +19,21 @@ ul {
   padding: 3px 2px 1px 8px;
 }
 
+li {
+  color: #0B3D91;
+  font-size: 18px;
+  padding: 3px 2px 1px 8px;
+}
+
+.usersName {
+  color: red;
+}
+
 .send-container {
   overflow: hidden;
   position: absolute;
   bottom: 10px;
-  width: 90%;
+  width: 80%;
   margin: 0px 5%;
   color: #fff;
   border: 1px solid #333;
