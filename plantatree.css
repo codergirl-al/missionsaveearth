@@ -10,107 +10,96 @@ body {
   width: auto;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 1500px;
+  
 }
-v<style type="text/css" >
 .form-style-3 {
-    max-width: 450px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  max-width: 450px;
+  display: block;
+  margin: 10px auto;
 }
 
 .form-style-3 label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 15px;
 }
 
-    .form-style-3 label > span {
-        float: left;
-        width: 100px;
-        color: #000000;
-        font-weight: bold;
-        font-size: 13px;
-        text-shadow: 1px 1px 1px #fff;
-    }
+.form-style-3 label > span {
+  float: left;
+  width: 100px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 17px;
+}
 
 .form-style-3 fieldset {
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    margin: 0px 0px 10px 0px;
-    border: 1px solid #00ff21;
-    padding: 20px;
-    background: #4cff00;
-    box-shadow: inset 0px 0px 15px #808080;
-    -moz-box-shadow: inset 0px 0px 15px #808080;
-    -webkit-box-shadow: inset 0px 0px 15px #808080;
+  border-radius: 10px;
+  margin: 0px 0px 10px 0px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-    .form-style-3 fieldset legend {
-        color: #000000;
-        border-top: 1px solid #000000;
-        border-left: 1px solid #010109;
-        border-right: 1px solid #140202;
-        border-radius: 5px 5px 0px 0px;
-        -webkit-border-radius: 5px 5px 0px 0px;
-        -moz-border-radius: 5px 5px 0px 0px;
-        background: #fff;
-        padding: 0px 8px 3px 8px;
-        box-shadow: -0px -1px 2px #fff;
-        -moz-box-shadow: -0px -1px 2px #fff;
-        -webkit-box-shadow: -0px -1px 2px #fff;
-        font-weight: normal;
-        font-size: 12px;
-    }
+.form-style-3 fieldset legend {
+  color: #000000;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #010109;
+  border-right: 1px solid #140202;
+  border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  background: #fff;
+  padding: 0px 8px 3px 8px;
+  box-shadow: -0px -1px 2px #fff;
+  -moz-box-shadow: -0px -1px 2px #fff;
+  -webkit-box-shadow: -0px -1px 2px #fff;
+  font-weight: normal;
+  font-size: 12px;
+}
 
 .form-style-3 textarea {
-    width: 250px;
-    height: 100px;
+  width: 250px;
+  height: 100px;
 }
 
-.form-style-3 input[type=text],
-.form-style-3 input[type=date],
-.form-style-3 input[type=datetime],
-.form-style-3 input[type=number],
-.form-style-3 input[type=search],
-.form-style-3 input[type=time],
-.form-style-3 input[type=url],
-.form-style-3 input[type=email],
+.form-style-3 input[type="text"],
+.form-style-3 input[type="number"],
+.form-style-3 input[type="email"],
 .form-style-3 select,
 .form-style-3 textarea {
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border: 1px solid #010109;
-    outline: none;
-    color: #000000;
-    padding: 5px 8px 5px 8px;
-    box-shadow: inset 1px 1px 4px #808080;
-    -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
-    -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
-    background: #fff;
-    width: 50%;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  outline: none;
+  color: #000000;
+  padding: 5px 8px 5px 8px;
+  box-shadow: inset 1px 1px 4px #808080;
+  -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+  -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+  background: #fff;
+  width: 50%;
 }
 
-.form-style-3 input[type=submit],
-.form-style-3 input[type=button] {
-    background: #19aa0e;
-    border: 1px solid #3c5b3b;
-    padding: 5px 15px 5px 15px;
-    color: #black;
-    box-shadow: inset -1px -1px 3px #FF62A7;
-    -moz-box-shadow: inset -1px -1px 3px #808080;
-    -webkit-box-shadow: inset -1px -1px 3px #808080;
-    border-radius: 3px;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    font-weight: bold;
+
+
+.form-style-3 input[type="submit"],
+.form-style-3 input[type="button"] {
+  background: #fff;
+  border: none;
+  padding: 5px 15px 5px 15px;
+  color: #3c5b3b;
+  border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .required {
-    color: green;
-    font-weight: normal;
+  color: green;
+  font-weight: normal;
 }
-
-</style >
-
