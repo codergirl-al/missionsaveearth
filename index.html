@@ -21,7 +21,8 @@
   <body>
     <header class="header">
       <div class="topnav" id="myTopnav">
-        <a href="#"> <img
+        <a href="#">
+          <img
             class="nasa-logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/717px-NASA_logo.svg.png"
         /></a>
@@ -91,7 +92,7 @@
     </div>
 
     <br />
-    
+
     <h1 class="main-heading">You can measure your carbon footprints</h1>
     <div class="container-bg-info-text-white-rounded-lg-text-center">
       <h2 style="color: #00e676; font-weight: bold;">
@@ -106,15 +107,14 @@
       <br />
       <br />
       <button
-        id="btn-secondary-rounded-sm"
-        class="calculate"
-        onclick="calcCO2()">Calculate</button>
-      <br />
-      <br />
+        id="btn-secondary-rounded-sm" class="calculate" onclick="calcCO2()"> Calculate </button>
     </div>
     <br />
+    <p id="errormsg" class="red-heading"></p>
+    <br />
     <div id="hidden-container" class="container-text-center">
-      <a href="plantatree.html"> <img
+      <a href="plantatree.html">
+        <img
           src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2Fdownload__3_-removebg-preview%20(1).png?v=1601722540789"
       /></a>
       <p style="color: #FC3D21; font-weight:bold; font-size: 20px;">
@@ -140,59 +140,46 @@
     </div>
 
     <br />
-    
-    <h1 class="red-heading" style="text-align: center;">
-      A community to make a change!
+    <h1 class="red-heading">
+      Become an activist
     </h1>
-    
-    <div class="follow-div">
-      <a href="https://www.instagram.com/teamco2_nsac/" class="follow-btn"
-        >FOLLOW US</a
-      >
-    </div>
     <div class="container">
-      <p class="information">
-        Join us, and follow our instagram community. We are looking forward to
-        take more and more people with us in our mission. We truly believe we
-        can control our carbon footprints, and only if each one of us makes a
-        small change to our lifestyle,
-      </p>
-
-      <h3 class="main-heading">SOME OF OUR POSTS:</h3>
-
-      <div class="col-sm-4 col-xs-12 col-md-4">
-        <img
-          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2F399e2846-1e43-44b5-bb68-da43ff13462b.image.png?v=1601738387549"
-          alt="Instagram Post"
-          width="600"
-          height="400"
-          class="gallery-img"
-        />
-        <div class="desc">Fun facts</div>
-      </div>
-
-      <div class="col-sm-4 col-xs-12 col-md-4">
-        <img
-          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2F625dd750-f558-40d6-9408-9f79f3ab4cc5.image.png?v=1601738455816"
-          alt="Instagram Post"
-          width="600"
-          height="400"
-          class="gallery-img"
-        />
-        <div class="desc">Environment initiatives</div>
-      </div>
-
-      <div class="col-sm-4 col-xs-12 col-md-4">
-        <img
-          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2Fdd34cddc-495b-4c20-a700-d17ef2c83d69.image.png?v=1601740494559"
-          alt="Instagram Post"
-          width="600"
-          height="400"
-          class="gallery-img"
-        />
-        <div class="desc">We have a voice</div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="green-heading">Social media</h3>
+          <div class="activist-containers">
+            <a href="https://www.instagram.com/teamco2_nsac/" class="activist-btn">Join us</a>
+          </div>
+          <p class="information">
+            Knowing 2020's society and the usage of social media, we thought
+            that it's the best way to approach and influence more activists to
+            join our communty and movement.
+          </p>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="green-heading">Plant trees</h3>
+          <div class="activist-containers">
+            <a href="plantatree.html" class="activist-btn">Plant a tree</a>
+          </div>
+          <p class="information">
+            "Imagine if trees gave free wifi. We'd all be planting like crazy.
+            It's a pity they only give us the oxygen we breathe." <br />
+            - unknown
+          </p>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="green-heading">Our app</h3>
+          <div class="activist-containers">
+            <a href="https://share.proto.io/GJFDTH/" class="activist-btn">See the app</a>
+          </div>
+          <p class="information">
+            Why not be able to make certain calculations from an application
+            installed on your phone? More options are coming soon.
+          </p>
+        </div>
       </div>
     </div>
+
     <br /><br />
 
     <div class="earth-gif-container">
@@ -222,23 +209,28 @@
       var trip = document.getElementById("trips");
       document.getElementById("hidden-container").style.display = "none";
       function calcCO2() {
-        document.getElementById("hidden-container").style.display = "block";
-        var x = mpg.value;
-        var y = dist.value;
-        var z = trips.value;
-        var calc4 = (8.8 / x) * 1000;
-        var calc = (calc4 * y) / 1000;
-        var calc2 = calc * z;
-        var calc3 = calc2 * 52;
-        calc = calc.toFixed(2);
-        calc2 = calc2.toFixed(2);
-        calc3 = calc3.toFixed(2);
-        calc4 = calc4.toFixed(1);
-        console.log("calc is: " + calc);
-        res.innerHTML = calc;
-        res2.innerHTML = calc2;
-        res3.innerHTML = calc3;
-        res4.innerHTML = calc4;
+          if (mpg.value !=="" && dist.value !=="" && trip.value !== "")
+      {
+          document.getElementById("hidden-container").style.display = "block";
+          var x = mpg.value;
+          var y = dist.value;
+          var z = trips.value;
+          var calc4 = (8.8 / x) * 1000;
+          var calc = (calc4 * y) / 1000;
+          var calc2 = calc * z;
+          var calc3 = calc2 * 52;
+          calc = calc.toFixed(2);
+          calc2 = calc2.toFixed(2);
+          calc3 = calc3.toFixed(2);
+          calc4 = calc4.toFixed(1);
+          console.log("calc is: " + calc);
+          res.innerHTML = calc;
+          res2.innerHTML = calc2;
+          res3.innerHTML = calc3;
+          res4.innerHTML = calc4;
+        } else {
+          document.getElementById("errormsg").innerHTML = "Please fill all required fields";
+        }
       }
     </script>
 

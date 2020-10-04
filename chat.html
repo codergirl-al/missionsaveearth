@@ -32,9 +32,6 @@
       <h1 class="main-heading">
         Let's discuss ideas
       </h1>
-      <p class="information">
-        This chat is the place we can share our thoughts, ideas, exchange experiences, and why not come together and meet new people?
-      </p>
     </div>
 
     <!--CHAT-->
@@ -131,10 +128,10 @@
           // show delete button if message is sent by me
           if (snapshot.val().sender == myName) {
             html +=
-              "<button data-id='" +
+              "<button class='delMsg' data-id='" +
               snapshot.key +
               "' onclick='deleteMessage(this);'>";
-            html += "-X-";
+            html += "&#10008;";
             html += "</button>";
           }
           html += snapshot.val().sender + ": " + snapshot.val().message;

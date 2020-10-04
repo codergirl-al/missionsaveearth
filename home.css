@@ -14,7 +14,7 @@
 }
 
 .header {
-  background-image: url("https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2Fteamcarbondioxide.png?v=1601712375992");
+  background-image: url("https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2FTeam%20CO2.png?v=1601817306087");
   height: 100vh;
   width: auto;
   background-position: center;
@@ -95,4 +95,27 @@ input {
   color: #fff;
   padding: 16px 18px;
   transition: 0.5s;
+}
+
+.activist-containers {
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.activist-btn {
+  color: #FC3D21;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Arial;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.activist-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #FC3D21;
+  transition: 0.75s;
 }
