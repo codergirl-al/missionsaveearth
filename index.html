@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>team co2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="topnav" id="myTopnav">
+        <a href="#"> <img
+            class="nasa-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/717px-NASA_logo.svg.png"
+        /></a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="plantatree.html">Plant a tree</a>
+        <a href="chat.html">Chat</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </header>
+
+    <h1 class="main-heading">What is Carbon Dioxide?</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="red-heading">A colorless gas</h3>
+          <p class="information">
+            We cant talk about what our Carbon di oxide footprint is without
+            first knowing what it is. In short, Carbon di oxide (chemical
+            formula CO2) is a colorless gas with a density about 53% higher than
+            that of dry air.
+          </p>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="red-heading">Its effect</h3>
+          <p class="information">
+            Carbon dioxide molecules consist of a carbon atom covalently double
+            bonded to two oxygen atoms. Carbon di oxide is responsible for 0,04%
+            of our atmosphere, which to the plain eye might look really small,
+            but as we”ll see, it has a much bigger effect than you may think
+          </p>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-4">
+          <h3 class="red-heading">The molecule</h3>
+          <img src="https://i.gifer.com/VGP.gif" class="carbon-molecule" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="main-heading">Where can we find CO2 emissions?</h1>
+      <p class="information">
+        We all think that CO2 comes only from our breathing and cars, but humans
+        emit two tons of CO2 each year just by eating. But that’s not the only
+        strange way we release emissions into the atmosphere. The Corona Virus
+        pandemic has also changed Co2 emissions. U.K’s Institution of
+        Engineering and Technology claims that working from home increases CO2
+        emissions for many workers. That’s because telecommuting can increase
+        home energy use by up to 30%–and many workers who telecommute a few days
+        of the week tend to move further away from the office, increasing urban
+        sprawl and upping travel time when they do head in to see the boss The
+        rise of Co2 from pre industrial ages The current concentration is about
+        0.04% (412 ppm) by volume, having risen from pre-industrial levels of
+        280 ppm. Natural sources include volcanoes, hot springs and geysers, and
+        it is freed from carbonate rocks by dissolution in water and acids.
+        Because carbon dioxide is soluble in water, it occurs naturally in
+        groundwater, rivers and lakes, ice caps, glaciers and seawater. It is
+        present in deposits of petroleum and natural gas.
+      </p>
+
+      <img
+        class="statistics"
+        src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2F3fac752e-e173-4072-bca1-f11fb6ff94cb.image.png?v=1601724408517"
+      />
+    </div>
+
+    <br />
+    
+    <h1 class="main-heading">You can measure your carbon footprints</h1>
+    <div class="container-bg-info-text-white-rounded-lg-text-center">
+      <h2 style="color: #00e676; font-weight: bold;">
+        CARBON EMISSION CALCULATOR
+      </h2>
+      <h3>What is your car's MPG?</h3>
+      <input id="mpg" type="number" placeholder="Insert MPG" />
+      <h3>What is the total commute distance? (in miles)</h3>
+      <input id="dist" type="number" placeholder="Insert Distance" />
+      <h3>How often is this trip per week?</h3>
+      <input id="trips" type="number" placeholder="Insert Trips" />
+      <br />
+      <br />
+      <button
+        id="btn-secondary-rounded-sm"
+        class="calculate"
+        onclick="calcCO2()">Calculate</button>
+      <br />
+      <br />
+    </div>
+    <br />
+    <div id="hidden-container" class="container-text-center">
+      <a href="plantatree.html"> <img
+          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2Fdownload__3_-removebg-preview%20(1).png?v=1601722540789"
+      /></a>
+      <p style="color: #FC3D21; font-weight:bold; font-size: 20px;">
+        Oops, your CO2 emit is too high. Click the tree, make a change.
+      </p>
+
+      <h2>Your Carbon Footprint is:</h2>
+
+      <h1 id="result4" class="bg-success-rounded-lg"></h1>
+      <h3>g CO2e / mile</h3>
+      <br />
+      <h2>Your Carbon Footprint this trip is:</h2>
+      <h1 id="result" class="bg-success-rounded-lg"></h1>
+      <h3>kg CO2e</h3>
+      <br />
+      <h2>Your Carbon Footprint per week is:</h2>
+      <h1 id="result2" class="bg-success-rounded-lg"></h1>
+      <h3>kg CO2e</h3>
+      <br />
+      <h2>Your Carbon Footprint per year is:</h2>
+      <h1 id="result3" class="bg-success-rounded-lg"></h1>
+      <h3>kg CO2e</h3>
+    </div>
+
+    <br />
+    
+    <h1 class="red-heading" style="text-align: center;">
+      A community to make a change!
+    </h1>
+    
+    <div class="follow-div">
+      <a href="https://www.instagram.com/teamco2_nsac/" class="follow-btn"
+        >FOLLOW US</a
+      >
+    </div>
+    <div class="container">
+      <p class="information">
+        Join us, and follow our instagram community. We are looking forward to
+        take more and more people with us in our mission. We truly believe we
+        can control our carbon footprints, and only if each one of us makes a
+        small change to our lifestyle,
+      </p>
+
+      <h3 class="main-heading">SOME OF OUR POSTS:</h3>
+
+      <div class="col-sm-4 col-xs-12 col-md-4">
+        <img
+          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2F399e2846-1e43-44b5-bb68-da43ff13462b.image.png?v=1601738387549"
+          alt="Instagram Post"
+          width="600"
+          height="400"
+          class="gallery-img"
+        />
+        <div class="desc">Fun facts</div>
+      </div>
+
+      <div class="col-sm-4 col-xs-12 col-md-4">
+        <img
+          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2F625dd750-f558-40d6-9408-9f79f3ab4cc5.image.png?v=1601738455816"
+          alt="Instagram Post"
+          width="600"
+          height="400"
+          class="gallery-img"
+        />
+        <div class="desc">Environment initiatives</div>
+      </div>
+
+      <div class="col-sm-4 col-xs-12 col-md-4">
+        <img
+          src="https://cdn.glitch.com/62fceb25-ebb2-430b-8e59-dc498aba1521%2Fdd34cddc-495b-4c20-a700-d17ef2c83d69.image.png?v=1601740494559"
+          alt="Instagram Post"
+          width="600"
+          height="400"
+          class="gallery-img"
+        />
+        <div class="desc">We have a voice</div>
+      </div>
+    </div>
+    <br /><br />
+
+    <div class="earth-gif-container">
+      <img
+        src="https://media4.giphy.com/media/5YpIwrh5eeGFxfEGw3/giphy.gif"
+        class="earth-gif"
+        alt="earth"
+      />
+      <h2>Our planet.</h2>
+    </div>
+    <br />
+    <footer class="footer">
+      <p>
+        &copy; All rights reserved <br />
+        NASA Space Apps Challenge 2020 <br />
+        TeamCO2 - Carbon Footprints - Albania
+      </p>
+    </footer>
+
+    <script>
+      var res = document.getElementById("result");
+      var res2 = document.getElementById("result2");
+      var res3 = document.getElementById("result3");
+      var res4 = document.getElementById("result4");
+      var mpg = document.getElementById("mpg");
+      var dist = document.getElementById("dist");
+      var trip = document.getElementById("trips");
+      document.getElementById("hidden-container").style.display = "none";
+      function calcCO2() {
+        document.getElementById("hidden-container").style.display = "block";
+        var x = mpg.value;
+        var y = dist.value;
+        var z = trips.value;
+        var calc4 = (8.8 / x) * 1000;
+        var calc = (calc4 * y) / 1000;
+        var calc2 = calc * z;
+        var calc3 = calc2 * 52;
+        calc = calc.toFixed(2);
+        calc2 = calc2.toFixed(2);
+        calc3 = calc3.toFixed(2);
+        calc4 = calc4.toFixed(1);
+        console.log("calc is: " + calc);
+        res.innerHTML = calc;
+        res2.innerHTML = calc2;
+        res3.innerHTML = calc3;
+        res4.innerHTML = calc4;
+      }
+    </script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

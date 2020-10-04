@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="chat.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="plantatree.html">Plant a tree</a>
+      <a href="chat.html">Chat</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <div>
+      <h1 class="main-heading">
+        Let'd discuss ideas
+      </h1>
+      <p class="information">
+        This chat is the place we can share our thoughts, ideas, exchange experiences, and why not come together and meet new people?
+      </p>
+    </div>
+
+    <!--CHAT-->
+
+    <form onsubmit="return sendMessage();">
+      <div class="chat-container">
+        <ul id="messages" class="messages"></ul>
+        <div class="send-container">
+          <input
+            class="send-message"
+            id="message"
+            placeholder="Enter message"
+            autocomplete="off"
+          />
+          <input type="submit" class="submit-btn" value="Send" />
+        </div>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <p>
+        &copy; All rights reserved <br />
+        NASA Space Apps Challenge 2020 <br />
+        TeamCO2 - Carbon Footprints - Albania
+      </p>
+    </footer>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+    <!-- include firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCIURgtf-4eQoa2Cw2Svp1nrjI3X3rtzds",
+        authDomain: "mylivechatgt.firebaseapp.com",
+        databaseURL: "https://mylivechatgt.firebaseio.com",
+        projectId: "mylivechatgt",
+        storageBucket: "mylivechatgt.appspot.com",
+        messagingSenderId: "867802753588",
+        appId: "1:867802753588:web:97aa3de168593f30e0b861",
+        measurementId: "G-FPCZFWVCNE"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      var myName = prompt("Enter your name");
+
+      function sendMessage() {
+        // get message
+        var message = document.getElementById("message").value;
+
+        // save in database
+        firebase
+          .database()
+          .ref("messages")
+          .push()
+          .set({
+            sender: myName,
+            message: message
+          });
+        document.getElementById("message").value = "";
+        // prevent form from submitting
+        return false;
+      }
+
+      // listen for incoming messages
+      firebase
+        .database()
+        .ref("messages")
+        .on("child_added", function(snapshot) {
+          var html = "";
+          // give each message a unique ID
+          html += "<li className='sent-msg' id='message-" + snapshot.key + "'>";
+          // show delete button if message is sent by me
+          if (snapshot.val().sender == myName) {
+            html +=
+              "<button data-id='" +
+              snapshot.key +
+              "' onclick='deleteMessage(this);'>";
+            html += "-X-";
+            html += "</button>";
+          }
+          html += snapshot.val().sender + ": " + snapshot.val().message;
+          html += "</li>";
+
+          document.getElementById("messages").innerHTML += html;
+        });
+
+      function deleteMessage(self) {
+        // get message ID
+        var messageId = self.getAttribute("data-id");
+
+        // delete message
+        firebase
+          .database()
+          .ref("messages")
+          .child(messageId)
+          .remove();
+      }
+
+      // attach listener for delete message
+      firebase
+        .database()
+        .ref("messages")
+        .on("child_removed", function(snapshot) {
+          // remove message node
+          document.getElementById("message-" + snapshot.key).innerHTML =
+            "This message has been removed";
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

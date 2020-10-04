@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>team co2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="plantatree.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="topnav" id="myTopnav">
+        <a href="#"> <img
+            class="nasa-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/717px-NASA_logo.svg.png"
+        /></a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="plantatree.html">Plant a tree</a>
+        <a href="chat.html">Chat</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
+      
+      
+      
+      
+      <div class="form-style-3">
+        <form>
+            <fieldset>
+                <legend>plant trees</legend>
+
+                <label for="field4">
+                    <span>trees</span><select name="field4" class="select-field">
+                        <option value="number">5</option>
+                        <option value="number">20</option>
+                        <option value="number">50</option>
+                        <option value="number">100</option>
+                    </select>
+                </label>
+                <label for="field3"><span>other amount <span class="required">*</span></span><input type="number" class="input-field" name="field3" value="" /></label>
+
+                <label for="field1"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="field1" value="" /></label>
+                <label for="field2"><span>Email <span class="required">*</span></span><input type="email" class="input-field" name="field2" value="" /></label>
+
+            </fieldset>
+            <fieldset>
+                <legend>Message</legend>
+                <label for="field6"><span>Message <span class="required">*</span></span><textarea name="field6" class="textarea-field"></textarea></label>
+                <label><span> </span><input type="submit" value="Submit" /></label>
+            </fieldset>
+        </form>
+    </div>
+    </header>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <footer class="footer">
+      <p>
+        &copy; All rights reserved <br />
+        NASA Space Apps Challenge 2020 <br />
+        TeamCO2 - Carbon Footprints - Albania
+      </p>
+    </footer>
+    
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>
